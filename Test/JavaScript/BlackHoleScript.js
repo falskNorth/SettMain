@@ -6,7 +6,7 @@ function blackhole(element) {
     const ch = h;
     const maxorbit = 255; // distance from center
     const centery = ch / 2;
-    const centerx = cw / 2
+    const centerx = cw / 2;
 
     const startTime = new Date().getTime();
     let currentTime = 0;
@@ -15,6 +15,16 @@ function blackhole(element) {
     let collapse = false; // if hovered
     let expanse = false; // if clicked
     let returning = false; // if particles are returning to orbit
+
+    // New variables for clickable stars
+    const clickableStarsContainer = document.getElementById('clickableStarsContainer');
+    const clickableStarsData = [
+        { id: 'star1', text: 'About Me', url: 'about.html' },
+        { id: 'star2', text: 'Portfolio', url: 'portfolio.html' },
+        { id: 'star3', text: 'Contact', url: 'contact.html' },
+        // Add more stars as needed
+    ];
+    let clickableStarElements = []; // To store the actual DOM elements of clickable stars
 
     // Create canvas
     const canvas = document.createElement('canvas');
@@ -58,7 +68,7 @@ function blackhole(element) {
             rands.push(Math.random() * (maxorbit / 2) + maxorbit);
 
             this.orbital = (rands.reduce((p, c) => p + c, 0) / rands.length);
-            
+
             this.x = centerx; // All of these stars are at the center x position at all times
             this.y = centery + this.orbital; // Set Y position starting at the center y + the position in the orbit
 
@@ -78,12 +88,36 @@ function blackhole(element) {
             this.color = 'rgba(255,255,255,' + (1 - ((this.orbital) / 255)) + ')'; // Color the star white, but make it more transparent the further out it is generated
 
             this.hoverPos = centery + (maxorbit / 2) + this.collapseBonus; // Where the star will go on hover of the blackhole
-            this.expansePos = centery + (this.id % 100) * -10 + (Math.floor(Math.random() * 20) + 1); // Where the star will go when expansion takes place
+
+            // --- VISUAL STAR SPREAD (like original request) ---
+            const visualVerticalSpread = ch * 0.8;
+            const visualHorizontalSpread = cw * 0.8;
+            const starIndex = this.id % 2500;
+            const numStars = 2500;
+
+            this.expansePos = (ch * 0.1) + (starIndex / numStars) * visualVerticalSpread + (Math.random() * 50 - 25);
+            this.expanseX = (cw * 0.1) + (Math.random() * visualHorizontalSpread);
+
+            // --- CLICKABLE STAR SPREAD (50% in) ---
+            const clickableSpreadFactor = 0.5;
+
+            const clickableVerticalSpreadRange = ch * 0.8 * clickableSpreadFactor;
+            const clickableHorizontalSpreadRange = cw * 0.8 * clickableSpreadFactor;
+
+            const clickableVerticalOffset = (ch - clickableVerticalSpreadRange) / 2;
+            const clickableHorizontalOffset = (cw - clickableHorizontalSpreadRange) / 2;
+
+            this.clickableExpanseY = clickableVerticalOffset + (starIndex / numStars) * clickableVerticalSpreadRange + (Math.random() * 50 - 25);
+            this.clickableExpanseX = clickableHorizontalOffset + (Math.random() * clickableHorizontalSpreadRange);
+
+            // Initialize current positions for clickable elements, they will move towards their targets
+            this.currentClickableX = centerx;
+            this.currentClickableY = centery;
 
             this.prevR = this.startRotation;
             this.prevX = this.x;
             this.prevY = this.y;
-            
+
             // Store original position for returning
             this.originalY = this.yOrigin;
 
@@ -111,18 +145,75 @@ function blackhole(element) {
                 }
             } else if (expanse && !returning) {
                 this.rotation = this.startRotation + (currentTime * (this.speed / 2));
-                if (this.y > this.expansePos) {
-                    this.y -= Math.floor(this.expansePos - this.y) / -80; // Slower expansion for better visibility
+
+                // Move visual star towards its wider expanse position
+                if (Math.abs(this.y - this.expansePos) > 1) {
+                    this.y += (this.expansePos - this.y) / 80;
+                } else {
+                    this.y = this.expansePos;
+                }
+                if (Math.abs(this.x - this.expanseX) > 1) {
+                    this.x += (this.expanseX - this.x) / 80;
+                } else {
+                    this.x = this.expanseX;
+                }
+
+                // --- MODIFICATION START ---
+                // Move clickable element towards its more confined position (slower)
+                const clickableSpeedDivisor = 320; // 80 * 4 = 320 (1/4 speed)
+
+                if (Math.abs(this.currentClickableY - this.clickableExpanseY) > 1) {
+                    this.currentClickableY += (this.clickableExpanseY - this.currentClickableY) / clickableSpeedDivisor;
+                } else {
+                    this.currentClickableY = this.clickableExpanseY;
+                }
+                if (Math.abs(this.currentClickableX - this.clickableExpanseX) > 1) {
+                    this.currentClickableX += (this.clickableExpanseX - this.currentClickableX) / clickableSpeedDivisor;
+                } else {
+                    this.currentClickableX = this.clickableExpanseX;
+                }
+                // --- MODIFICATION END ---
+
+
+                // Update position of corresponding clickable star element
+                const clickableStar = clickableStarElements.find(s => s.dataset.starId === `star${this.id}`);
+                if (clickableStar) {
+                    // Position clickable element using its own calculated coordinates
+                    const rotatedClickablePos = rotate(centerx, centery, this.currentClickableX, this.currentClickableY, this.rotation);
+                    clickableStar.style.left = `${rotatedClickablePos[0]}px`;
+                    clickableStar.style.top = `${rotatedClickablePos[1]}px`;
                 }
             } else if (returning) {
                 // Returning to original orbit slowly
                 this.rotation = this.startRotation + (currentTime * this.speed);
                 if (Math.abs(this.y - this.originalY) > 2) {
-                    this.y += (this.originalY - this.y) / 50; // Much slower return
+                    this.y += (this.originalY - this.y) / 50;
                 } else {
                     this.y = this.originalY;
                     this.yOrigin = this.originalY;
                 }
+                // Also move X back to centerx
+                if (Math.abs(this.x - centerx) > 2) {
+                    this.x += (centerx - this.x) / 50;
+                } else {
+                    this.x = centerx;
+                }
+
+                // --- MODIFICATION START ---
+                // Move clickable element back to center (slower)
+                const clickableReturnSpeedDivisor = 200; // 50 * 4 = 200 (1/4 speed)
+
+                if (Math.abs(this.currentClickableY - centery) > 2) {
+                    this.currentClickableY += (centery - this.currentClickableY) / clickableReturnSpeedDivisor;
+                } else {
+                    this.currentClickableY = centery;
+                }
+                if (Math.abs(this.currentClickableX - centerx) > 2) {
+                    this.currentClickableX += (centerx - this.currentClickableX) / clickableReturnSpeedDivisor;
+                } else {
+                    this.currentClickableX = centerx;
+                }
+                // --- MODIFICATION END ---
             }
 
             context.save();
@@ -144,20 +235,57 @@ function blackhole(element) {
         }
     }
 
+    // Function to create clickable star elements
+    function createClickableStars() {
+        clickableStarsData.forEach((data, index) => {
+            const starDiv = document.createElement('div');
+            starDiv.className = 'clickable-star';
+            starDiv.dataset.starId = `star${index}`; // Link to a specific star in the `stars` array
+            starDiv.innerHTML = `<a href="${data.url}">${data.text}</a>`;
+            starDiv.style.position = 'absolute';
+            starDiv.style.color = '#FFF';
+            starDiv.style.fontSize = '16px';
+            starDiv.style.whiteSpace = 'nowrap';
+            starDiv.style.cursor = 'pointer';
+            starDiv.style.opacity = '0'; // Initially hidden
+            starDiv.style.transition = 'opacity 0.5s ease-in-out';
+            clickableStarsContainer.appendChild(starDiv);
+            clickableStarElements.push(starDiv);
+
+            // Initial position for clickable stars (will be updated by star.draw)
+            // They start at the center, like the visual stars
+            starDiv.style.left = `${centerx}px`;
+            starDiv.style.top = `${centery}px`;
+        });
+    }
+
     // Event listeners
     const centerHover = document.querySelector('.centerHover');
-    
+
     centerHover.addEventListener('click', function() {
         collapse = false;
         expanse = true;
         returning = false;
         this.classList.add('open');
-        
+
+        // Show clickable stars container and enable pointer events
+        clickableStarsContainer.style.opacity = '1';
+        clickableStarsContainer.style.pointerEvents = 'auto';
+
+        // Make individual clickable stars visible
+        clickableStarElements.forEach(star => {
+            star.style.opacity = '1';
+        });
+
         // Start the return cycle after full expansion (20-30 seconds)
         setTimeout(() => {
             expanse = false;
             returning = true;
-            
+
+            // Hide clickable stars container and disable pointer events
+            clickableStarsContainer.style.opacity = '0';
+            clickableStarsContainer.style.pointerEvents = 'none';
+
             // After particles return, reset to normal orbit
             setTimeout(() => {
                 returning = false;
@@ -165,13 +293,13 @@ function blackhole(element) {
             }, 8000); // 8 seconds to return slowly
         }, 25000); // 25 seconds of expansion experience
     });
-    
+
     centerHover.addEventListener('mouseover', function() {
         if (expanse === false) {
             collapse = true;
         }
     });
-    
+
     centerHover.addEventListener('mouseout', function() {
         if (expanse === false) {
             collapse = false;
@@ -201,6 +329,7 @@ function blackhole(element) {
         for (let i = 0; i < 2500; i++) { // create 2500 stars
             new Star();
         }
+        createClickableStars(); // Create the clickable star elements
         loop();
     }
 
