@@ -69,7 +69,7 @@ export function ClipsPage({ onBack }: ClipsPageProps) {
           </div>
           <div className="text-sm text-gray-500">
             <span className="text-green-600">/** </span>
-            <span>Video demonstrations and highlights</span>
+            <span>Heart-pounding moments of skill, strategy, and sheer luck</span>
             <span className="text-green-600"> **/</span>
           </div>
         </motion.div>
@@ -86,12 +86,12 @@ export function ClipsPage({ onBack }: ClipsPageProps) {
             <div className="text-xs text-gray-500">Total Clips</div>
           </div>
           <div className="bg-gray-950 border border-green-900 p-4">
-            <div className="text-2xl text-green-400 mb-1">46.1K</div>
-            <div className="text-xs text-gray-500">Total Views</div>
+            <div className="text-2xl text-green-400 mb-1">Overwatch</div>
+            <div className="text-xs text-gray-500">Current Grind</div>
           </div>
           <div className="bg-gray-950 border border-green-900 p-4">
-            <div className="text-2xl text-green-400 mb-1">1.2K</div>
-            <div className="text-xs text-gray-500">Subscribers</div>
+            <div className="text-2xl text-green-400 mb-1">Plat Tank</div>
+            <div className="text-xs text-gray-500">Rank</div>
           </div>
         </motion.div>
 
@@ -198,9 +198,9 @@ export function ClipsPage({ onBack }: ClipsPageProps) {
         >
           <div className="text-gray-600 mb-2">// More content coming soon</div>
           <div className="text-gray-500">
-            <span className="text-purple-400">subscribe</span>
+            <span className="text-purple-400">GoodGame</span>
             <span className="text-gray-400">(</span>
-            <span className="text-green-400">"IsBerg.gg"</span>
+            <span className="text-green-400">"Well Played"</span>
             <span className="text-gray-400">);</span>
           </div>
         </motion.div>

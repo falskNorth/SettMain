@@ -54,7 +54,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                 <span className="text-gray-500">const</span>{" "}
                 <span className="text-blue-300">name</span>{" "}
                 <span className="text-gray-500">=</span>{" "}
-                <span className="text-green-400">"Kit IsBerg"</span>
+                <span className="text-green-400">"Kaitlan Berg"</span>
                 <span className="text-gray-600">;</span>
               </div>
               
@@ -62,7 +62,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                 <span className="text-gray-500">const</span>{" "}
                 <span className="text-blue-300">role</span>{" "}
                 <span className="text-gray-500">=</span>{" "}
-                <span className="text-green-400">"Full Stack Developer"</span>
+                <span className="text-green-400">"Graduate Control System Engineer"</span>
                 <span className="text-gray-600">;</span>
               </div>
               
@@ -70,16 +70,18 @@ export function AboutPage({ onBack }: AboutPageProps) {
                 <span className="text-gray-500">const</span>{" "}
                 <span className="text-blue-300">location</span>{" "}
                 <span className="text-gray-500">=</span>{" "}
-                <span className="text-green-400">"San Francisco, CA"</span>
+                <span className="text-green-400">"Northampton, UK"</span>
                 <span className="text-gray-600">;</span>
               </div>
 
               <div className="pt-4 border-t border-green-900">
                 <div className="text-gray-600 mb-2">// About me</div>
                 <p className="text-gray-400">
-                  Passionate developer with expertise in modern web technologies. 
-                  I love building innovative solutions and pushing the boundaries 
-                  of what's possible with code.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                    lacinia justo vitae condimentum accumsan. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit. Nulla a dignissim dui. Aliquam
+                    erat volutpat. In nec semper augue. Maecenas feugiat tellus sit
+                    amet egestas sollicitudin. Suspendisse vitae dui ante.
                 </p>
               </div>
             </div>
@@ -100,33 +102,36 @@ export function AboutPage({ onBack }: AboutPageProps) {
             <div className="space-y-3 text-sm">
               <div>
                 <span className="text-gray-500">const</span>{" "}
-                <span className="text-blue-300">frontend</span>{" "}
+                <span className="text-blue-300">Lorem ipsum</span>{" "}
                 <span className="text-gray-500">= [</span>
                 <div className="ml-6 text-green-400">
-                  <div>"React", "TypeScript", "Next.js",</div>
-                  <div>"Tailwind CSS", "Motion"</div>
+                  <div>"Lorem ", "ipsum ", "dolor",</div>
+                  <div>"sit ", "amet", "consectetur ", "adipiscing "</div>
+                    <div>"elit "</div>
                 </div>
                 <span className="text-gray-500">];</span>
               </div>
 
               <div>
                 <span className="text-gray-500">const</span>{" "}
-                <span className="text-blue-300">backend</span>{" "}
+                <span className="text-blue-300">Lorem ipsum</span>{" "}
                 <span className="text-gray-500">= [</span>
                 <div className="ml-6 text-green-400">
-                  <div>"Node.js", "Python", "PostgreSQL",</div>
-                  <div>"MongoDB", "REST APIs"</div>
+                    <div>"Lorem ", "ipsum ", "dolor",</div>
+                    <div>"sit ", "amet", "consectetur ", "adipiscing "</div>
+                    <div>"elit "</div>
                 </div>
                 <span className="text-gray-500">];</span>
               </div>
 
               <div>
                 <span className="text-gray-500">const</span>{" "}
-                <span className="text-blue-300">tools</span>{" "}
+                <span className="text-blue-300">Lorem ipsum</span>{" "}
                 <span className="text-gray-500">= [</span>
                 <div className="ml-6 text-green-400">
-                  <div>"Git", "Docker", "AWS",</div>
-                  <div>"Figma", "VS Code"</div>
+                    <div>"Lorem ", "ipsum ", "dolor",</div>
+                    <div>"sit ", "amet", "consectetur ", "adipiscing "</div>
+                    <div>"elit "</div>
                 </div>
                 <span className="text-gray-500">];</span>
               </div>
@@ -147,26 +152,26 @@ export function AboutPage({ onBack }: AboutPageProps) {
             
             <div className="space-y-4 text-sm">
               <div>
-                <div className="text-yellow-400 mb-1">Senior Developer</div>
-                <div className="text-gray-500">Tech Company Inc. | 2021 - Present</div>
+                <div className="text-yellow-400 mb-1">Graduate Control System Engineer</div>
+                <div className="text-gray-500">IES Works ltd.  | 2024 - Present</div>
                 <div className="text-gray-600 mt-2">
-                  // Led development of core platform features
+                  // Helped with software development across serval projects
                 </div>
               </div>
 
               <div className="border-t border-green-900 pt-4">
-                <div className="text-yellow-400 mb-1">Full Stack Developer</div>
-                <div className="text-gray-500">StartUp XYZ | 2019 - 2021</div>
+                <div className="text-yellow-400 mb-1">Retail Assistant</div>
+                <div className="text-gray-500">Primark | 2021 - 2024</div>
                 <div className="text-gray-600 mt-2">
-                  // Built scalable web applications
+                  //  Skilled in customer service, POS operations, and inventory management to boost sales and satisfaction.
                 </div>
               </div>
 
               <div className="border-t border-green-900 pt-4">
-                <div className="text-yellow-400 mb-1">Junior Developer</div>
-                <div className="text-gray-500">Digital Agency | 2017 - 2019</div>
+                <div className="text-yellow-400 mb-1">Essex Blades Esports Club President</div>
+                <div className="text-gray-500">University of Essex Student Union | 2021 - 2024</div>
                 <div className="text-gray-600 mt-2">
-                  // Developed client websites and applications
+                  // Lead a small team to organise tournaments, grow membership and secure growth for the follow year.
                 </div>
               </div>
             </div>
@@ -192,30 +197,30 @@ export function AboutPage({ onBack }: AboutPageProps) {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-start gap-2">
                   <span className="text-green-500">→</span>
-                  <span>Open source contributions</span>
+                  <span>Competitive gaming (LoL, Overwatch 2, Pokemon)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500">→</span>
-                  <span>Game development & design</span>
+                  <span>Narrative gaming (Baldur's Gate 3, Metal Gear Solid, Bioshock)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500">→</span>
-                  <span>AI & machine learning</span>
+                  <span>Nulla a dignissim dui</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500">→</span>
-                  <span>Competitive gaming (LoL, Valorant)</span>
+                  <span>Lorem ipsum dolor</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500">→</span>
-                  <span>Teaching & mentoring</span>
+                  <span>Suspendisse vitae dui ante</span>
                 </div>
               </div>
 
               <div className="pt-4 border-t border-green-900">
                 <div className="text-yellow-400">
                   <span className="text-purple-400">console</span>.log(
-                  <span className="text-green-400">"Always learning, always building!"</span>
+                  <span className="text-green-400">"'OK' - Rammus"</span>
                   );
                 </div>
               </div>

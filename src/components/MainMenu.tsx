@@ -23,7 +23,7 @@ const menuItems = [
     id: "clips",
     label: "Clips",
     command: "load_clips()",
-    description: "// heart-pounding moments of skill, strategy, and sheer luck",
+    description: "// Heart-pounding moments of skill, strategy, and sheer luck",
   },
   {
     id: "projects",

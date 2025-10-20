@@ -22,6 +22,7 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
             </div>
             <button
               onClick={onBack}
+
               className="flex items-center gap-2 text-gray-500 hover:text-green-400 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -48,7 +49,7 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
               <Mail className="w-5 h-5" />
               <h2 className="text-xl">Contact</h2>
             </div>
-            
+
             <div className="space-y-4 text-sm">
               <div>
                 <span className="text-gray-500">const</span>{" "}
@@ -58,19 +59,13 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
                   <div>
                     <span className="text-blue-300">email</span>
                     <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"kit@isberg.gg"</span>
-                    <span className="text-gray-600">,</span>
-                  </div>
-                  <div>
-                    <span className="text-blue-300">phone</span>
-                    <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"+1 (555) 123-4567"</span>
+                    <span className="text-green-400">"kitberg17@gmail.com"</span>
                     <span className="text-gray-600">,</span>
                   </div>
                   <div>
                     <span className="text-blue-300">location</span>
                     <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"San Francisco, CA"</span>
+                    <span className="text-green-400">"Northapton, UK"</span>
                     <span className="text-gray-600">,</span>
                   </div>
                   <div>
@@ -86,12 +81,13 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
                 <div className="text-gray-600 mb-3">// Quick actions</div>
                 <div className="space-y-2">
                   <button className="w-full bg-green-900/20 hover:bg-green-900/40 border border-green-700 px-4 py-2 text-left transition-colors flex items-center gap-2">
+
                     <Mail className="w-4 h-4" />
-                    <span>Send Email</span>
+                    <a href="mailto:kitberg17@gmail.com">Send Email</a>
                   </button>
                   <button className="w-full bg-green-900/20 hover:bg-green-900/40 border border-green-700 px-4 py-2 text-left transition-colors flex items-center gap-2">
-                    <Download className="w-4 h-4" />
-                    <span>Download Resume (PDF)</span>
+                      <Download className="w-4 h-4" />
+                    <a href="src/Documents/" download="KaitlanCV2025.pdf">Download Resume (PDF)</a>
                   </button>
                 </div>
               </div>
@@ -109,7 +105,7 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
               <FileText className="w-5 h-5" />
               <h2 className="text-xl">Links</h2>
             </div>
-            
+
             <div className="space-y-4 text-sm">
               <div>
                 <span className="text-gray-500">const</span>{" "}
@@ -119,19 +115,19 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
                   <div>
                     <span className="text-blue-300">linkedin</span>
                     <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"linkedin.com/in/kitisberg"</span>
+                    <span className="text-green-400">"linkedin.com/in/kaitlan-berg"</span>
                     <span className="text-gray-600">,</span>
                   </div>
                   <div>
                     <span className="text-blue-300">github</span>
                     <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"github.com/kitisberg"</span>
+                    <span className="text-green-400">"github.com/falskNorth"</span>
                     <span className="text-gray-600">,</span>
                   </div>
                   <div>
                     <span className="text-blue-300">portfolio</span>
                     <span className="text-gray-500">:</span>{" "}
-                    <span className="text-green-400">"isberg.gg"</span>
+                    <span className="text-green-400">"CHANGE THIS TO MAIN URL"</span>
                   </div>
                 </div>
                 <span className="text-gray-500">{"}"};</span>
@@ -139,14 +135,16 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
 
               <div className="pt-4 border-t border-green-900 space-y-2">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/kaitlan-berg-14517b203/"
+                  target="_blank"
                   className="w-full bg-blue-900/20 hover:bg-blue-900/40 border border-blue-700 px-4 py-2 text-left transition-colors flex items-center gap-2 text-blue-400"
                 >
                   <Linkedin className="w-4 h-4" />
                   <span>View LinkedIn Profile</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/falskNorth"
+                  target="_blank"
                   className="w-full bg-purple-900/20 hover:bg-purple-900/40 border border-purple-700 px-4 py-2 text-left transition-colors flex items-center gap-2 text-purple-400"
                 >
                   <Github className="w-4 h-4" />
@@ -167,38 +165,38 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
               <FileText className="w-5 h-5" />
               <h2 className="text-xl">Professional Summary</h2>
             </div>
-            
+
             <div className="space-y-4 text-sm">
               <div>
                 <span className="text-gray-600">// Executive summary for recruiters</span>
               </div>
-              
+
               <div className="text-gray-400 space-y-3">
                 <p>
-                  Full-stack developer with 6+ years of experience building scalable web applications 
-                  and leading development teams. Specialized in React, TypeScript, and Node.js with a 
-                  proven track record of delivering high-quality products on time.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue turpis metus,
+                    vitae faucibus urna dictum id. Suspendisse in turpis ex. Mauris feugiat nisl eget
+                    condimentum posuere. Ut tempus vitae eros quis vestibulum. Etiam et euismod ligula.
                 </p>
-                
+
                 <p>
                   <span className="text-green-400">Key Achievements:</span>
                 </p>
                 <ul className="ml-6 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">→</span>
-                    <span>Led development of platform serving 100K+ daily active users</span>
+                    <span>Maecenas aliquam, lorem id luctus euismod</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">→</span>
-                    <span>Reduced application load time by 60% through optimization</span>
+                    <span>Nam quis facilisis ex, in tincidunt elit. Nullam tincidunt elementum velit feugiat sollicitudin</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">→</span>
-                    <span>Mentored 5+ junior developers to senior positions</span>
+                    <span>Mauris euismod sapien vitae diam gravida, ac sollicitudin nisi convallis</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">→</span>
-                    <span>Open source contributor with 1000+ GitHub stars</span>
+                    <span>Quisque pellentesque elit sit amet nunc tincidunt</span>
                   </li>
                 </ul>
               </div>
@@ -206,16 +204,16 @@ export function RecruitersPage({ onBack }: RecruitersPageProps) {
               <div className="pt-4 border-t border-green-900">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-gray-900 border border-green-800 p-3">
-                    <div className="text-2xl text-green-400">6+</div>
+                    <div className="text-2xl text-green-400">1+</div>
                     <div className="text-xs text-gray-500">Years Experience</div>
                   </div>
                   <div className="bg-gray-900 border border-green-800 p-3">
-                    <div className="text-2xl text-green-400">50+</div>
+                    <div className="text-2xl text-green-400">20+</div>
                     <div className="text-xs text-gray-500">Projects Completed</div>
                   </div>
                   <div className="bg-gray-900 border border-green-800 p-3">
-                    <div className="text-2xl text-green-400">15+</div>
-                    <div className="text-xs text-gray-500">Technologies</div>
+                    <div className="text-2xl text-green-400">10+</div>
+                    <div className="text-xs text-gray-500">Computer Languages</div>
                   </div>
                   <div className="bg-gray-900 border border-green-800 p-3">
                     <div className="text-2xl text-green-400">100%</div>

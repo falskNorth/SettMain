@@ -8,57 +8,43 @@ interface ProjectsPageProps {
 const projects = [
   {
     id: 1,
-    name: "E-Commerce Platform",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    description: "Full-featured online shopping platform with payment integration",
-    stars: 245,
+    name: "AI Edmunds (+ Enoch)",
+    tech: ["C#", "Java","Unity Engine", ],
+    description: "AI_Edmund A collection of my AI's all conveniently called Edmund (+Enoch)",
+    // stars: 0,
     status: "Production",
-    link: "https://github.com",
+    link: "https://github.com/falskNorth/AI_Edmund",
+     demo: "https://github.com/falskNorth/AI_Edmund",
   },
   {
     id: 2,
-    name: "Real-time Chat Application",
-    tech: ["React", "Socket.io", "Redis", "PostgreSQL"],
-    description: "Scalable messaging app with end-to-end encryption",
-    stars: 189,
-    status: "Production",
-    link: "https://github.com",
+    name: "GitPages to host the web version of my player vs AI Tetris remake (Edmund III)",
+    tech: ["HTML", "CSS", "Unity Engine",],
+    description: "A repo for the website that'll host my Tetris remake that you can play vs my AI called",
+    // stars: 0,
+    status: "Complete",
+    link: "https://github.com/falskNorth/EdmundTetris",
+    demo:"https://falsknorth.github.io/EdmundTetris/",
   },
   {
     id: 3,
-    name: "AI-Powered Analytics Dashboard",
-    tech: ["Next.js", "Python", "TensorFlow", "D3.js"],
-    description: "Business intelligence tool with ML predictions",
-    stars: 312,
-    status: "Beta",
-    link: "https://github.com",
+    name: "Silly Scripts",
+    tech: ["HTML", "Python", ],
+    description: "A repo for random small programs I've Made",
+    // stars: 0,
+    status: "Production",
+    link: "https://github.com/falskNorth/SillyScripts",
+     demo: "https://github.com/falskNorth/SillyScript",
   },
   {
     id: 4,
-    name: "Task Management System",
-    tech: ["Vue.js", "Express", "MySQL", "AWS"],
-    description: "Team collaboration and project tracking platform",
-    stars: 156,
-    status: "Production",
-    link: "https://github.com",
-  },
-  {
-    id: 5,
-    name: "Portfolio Builder",
-    tech: ["React", "Tailwind", "Supabase"],
-    description: "No-code portfolio website generator for developers",
-    stars: 421,
-    status: "Production",
-    link: "https://github.com",
-  },
-  {
-    id: 6,
-    name: "Weather Forecast API",
-    tech: ["Node.js", "Express", "Redis", "Docker"],
-    description: "RESTful API for weather data with caching",
-    stars: 98,
-    status: "Active",
-    link: "https://github.com",
+    name: "Coterie Denim",
+    tech: ["HTML", "CSS",],
+    description: "A simple Static Website made for a friend to help her get the edge in her fashion University assignment",
+      // stars: 0,
+    status: "Complete",
+    link: "https://github.com/falskNorth/KatieUni",
+    demo: "https://falsknorth.github.io/KatieUni/",
   },
 ];
 
@@ -104,16 +90,16 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
             <div className="text-xs text-gray-500">Total Projects</div>
           </div>
           <div className="bg-gray-950 border border-green-900 p-4">
-            <div className="text-2xl text-green-400 mb-1">1.4K</div>
-            <div className="text-xs text-gray-500">GitHub Stars</div>
-          </div>
-          <div className="bg-gray-950 border border-green-900 p-4">
-            <div className="text-2xl text-green-400 mb-1">15+</div>
-            <div className="text-xs text-gray-500">Technologies</div>
-          </div>
-          <div className="bg-gray-950 border border-green-900 p-4">
-            <div className="text-2xl text-green-400 mb-1">5</div>
+            <div className="text-2xl text-green-400 mb-1">2</div>
             <div className="text-xs text-gray-500">In Production</div>
+          </div>
+          <div className="bg-gray-950 border border-green-900 p-4">
+            <div className="text-2xl text-green-400 mb-1"> (╥﹏╥)</div>
+            <div className="text-xs text-gray-500">Program Crashes </div>
+          </div>
+          <div className="bg-gray-950 border border-green-900 p-4">
+            <div className="text-2xl text-green-400 mb-1">∞</div>
+            <div className="text-xs text-gray-500">Ideas</div>
           </div>
         </motion.div>
 
@@ -141,10 +127,10 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
                       {project.name}
                     </h3>
                     <div className="flex items-center gap-3 text-xs">
-                      <div className="flex items-center gap-1 text-yellow-400">
-                        <Star className="w-3 h-3" fill="currentColor" />
-                        <span>{project.stars}</span>
-                      </div>
+                      {/*<div className="flex items-center gap-1 text-yellow-400">*/}
+                      {/*  <Star className="w-3 h-3" fill="currentColor" />*/}
+                      {/*  <span>{project.stars}</span>*/}
+                      {/*</div>*/}
                       <div className={`px-2 py-0.5 rounded ${
                         project.status === "Production" 
                           ? "bg-green-900/30 text-green-400" 
@@ -185,11 +171,11 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
                 <div className="flex gap-2 pt-3 border-t border-green-900">
                   <button className="flex-1 bg-green-900/20 hover:bg-green-900/40 border border-green-700 px-3 py-2 text-xs transition-colors flex items-center justify-center gap-2">
                     <Github className="w-3 h-3" />
-                    <span>View Code</span>
+                      <a href={project.link} target="_blank">View Code</a>
                   </button>
                   <button className="flex-1 bg-gray-900 hover:bg-gray-800 border border-gray-700 px-3 py-2 text-xs transition-colors flex items-center justify-center gap-2 text-gray-400">
                     <ExternalLink className="w-3 h-3" />
-                    <span>Live Demo</span>
+                      <a href={project.demo} target="_blank">Live Demo</a>
                   </button>
                 </div>
               </motion.div>
@@ -217,12 +203,12 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
               <span className="text-gray-400">.</span>
               <span className="text-yellow-400">open</span>
               <span className="text-gray-400">(</span>
-              <span className="text-green-400">"https://github.com/kitisberg"</span>
+              <span className="text-green-400">"https://github.com/falskNorth"</span>
               <span className="text-gray-400">);</span>
             </div>
             <button className="mt-4 bg-green-900/20 hover:bg-green-900/40 border border-green-700 px-6 py-2 text-sm transition-colors inline-flex items-center gap-2">
               <Github className="w-4 h-4" />
-              <span>Visit GitHub Profile</span>
+              <a href="https://github.com/falskNorth" target="_blank">Visit GitHub Profile</a>
             </button>
           </div>
         </motion.div>
