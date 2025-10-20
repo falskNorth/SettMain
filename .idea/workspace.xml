@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d817875e-ce20-4fc1-9d56-d49b2de406eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClipsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClipsPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RecruitersPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecruitersPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760950107657</updated>
       <workItem from="1760950110231" duration="104000" />
-      <workItem from="1760950308697" duration="12901000" />
+      <workItem from="1760950308697" duration="17393000" />
     </task>
     <servers />
   </component>

@@ -54,7 +54,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                 <span className="text-gray-500">const</span>{" "}
                 <span className="text-blue-300">name</span>{" "}
                 <span className="text-gray-500">=</span>{" "}
-                <span className="text-green-400">"Kaitlan Berg"</span>
+                <span className="text-green-400">"Kaitlan 'Kit' Berg"</span>
                 <span className="text-gray-600">;</span>
               </div>
               
