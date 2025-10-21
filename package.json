@@ -1,8 +1,8 @@
 
   {
-    "homepage": ".",
+    "homepage": "https://sett-main.vercel.app/",
 
-    "name": "Video Game Style Loading Page",
+    "name": "KitBerg_gg",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
