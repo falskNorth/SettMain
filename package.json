@@ -1,6 +1,6 @@
 
   {
-      "name": "Video Game Style Loading Page",
+      "name": "KitBerg.gg",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -55,6 +55,6 @@
       },
       "scripts": {
           "dev": "vite",
-          "build": "vite build"
+          "build": "vite build --output public"
       }
   }
