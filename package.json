@@ -1,6 +1,8 @@
 
   {
-      "name": "Video Game Style Loading Page",
+    "homepage": ".",
+
+    "name": "Video Game Style Loading Page",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
